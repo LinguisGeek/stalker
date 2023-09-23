@@ -97,6 +97,7 @@ function displayData(name, imageUrl, docId) {
         <button class="delete-btn" data-id="${docId}" data-image="${imageUrl}">Supprimer</button>
     `;
 
+    // Sélectionnez le conteneur et ajoutez le div d'entraînement à celui-ci
     const container = document.querySelector('.training-container');
     container.appendChild(displayDiv);
 
@@ -106,7 +107,15 @@ function displayData(name, imageUrl, docId) {
         const imageUrl = e.target.getAttribute('data-image');
         deleteFromFirestore(docId);
         deleteFromStorage(imageUrl);
-        
+
         e.target.parentElement.remove();
     });
+
+    // Ajoutez un écouteur d'événements click à displayDiv pour rediriger vers la page de détail de l'entraînement
+    displayDiv.addEventListener('click', function(e) {
+        if (e.target !== deleteBtn) {  // Ignorez le clic sur le bouton Supprimer
+            window.location.href = `training_detail.html?id=${docId}`;
+        }
+    });
 }
+
