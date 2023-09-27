@@ -118,4 +118,3 @@ function displayData(name, imageUrl, docId) {
         }
     });
 }
-
