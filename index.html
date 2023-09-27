@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
+<!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="stalker.css">
+	<link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stalker.css">
     <title>Stalker</title>
-
-    <!-- Initialize Firebase -->
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyA17KM32qn5Uf6wSo3ypVk9PUTtceleKRY",
-            authDomain: "stalker-1f725.firebaseapp.com",
-            projectId: "stalker-1f725",
-            storageBucket: "stalker-1f725.appspot.com",
-            messagingSenderId: "495150745112",
-            appId: "1:495150745112:web:a2271d7af7b7bdfe29e56d",
-            measurementId: "G-C7JEJSDP7J"
-        }; 
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-
-    <!-- Include your detail.js script -->
 </head>
 
 <body>
-<button id="myBtn">Ajouter un nouvel entraînement</button>
-<div id="training-detail"></div>
+	<script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyA17KM32qn5Uf6wSo3ypVk9PUTtceleKRY",
+  authDomain: "stalker-1f725.firebaseapp.com",
+  projectId: "stalker-1f725",
+  storageBucket: "stalker-1f725.appspot.com",
+  messagingSenderId: "495150745112",
+  appId: "1:495150745112:web:a2271d7af7b7bdfe29e56d",
+  measurementId: "G-C7JEJSDP7J"
+}; 
+  
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+    <div>
+        <h1>Stalker</h1>
+        <h2>Ton application sportive</h2>
+    </div>
+    <!-- Bouton pour ouvrir la modale -->
+<div class="training-container"></div>
+<button>Nouvel entraînement</button>
+    <!-- Bouton pour ouvrir la modale -->
+<!-- Modale pour ajouter un nouvel entraînement -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <h3>Ajouter un nouvel entraînement</h3>
-        <form id="detail-form">
+        <form id="training-form">
             <label for="name">Nom :</label>
             <input type="text" id="name" required>
             <label for="image">Image (optionnel) :</label>
             <input type="file" id="image">
-            <label for="series">Séries :</label>
-            <input type="number" id="series" required>
-            <label for="recovery">Récupération :</label>
-            <input type="number" id="recovery" required>
-            <label for="weight">Poids :</label>
-            <input type="number" id="weight" required>
-            <input type="hidden" id="trainingIndex" name="trainingIndex" value="">
             <input type="submit" value="Ajouter">
         </form>
     </div>
 </div>
-<div class="training-container"></div>
-    <script src="detail.js"></script>
+<!-- Lien vers votre fichier JavaScript -->
+<script src="stalker.js"></script>
+
 </body>
 </html>
